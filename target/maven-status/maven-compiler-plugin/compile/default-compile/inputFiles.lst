@@ -1,0 +1,10 @@
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/AwesomePizzaApplication.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/Utility/Constants.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/config/WebConfig.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/controller/OrdiniController.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/entity/OrdineEntity.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/model/OrdinePojo.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/model/ResponsePojo.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/repository/OrdiniRepository.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/service/OrdineService.java
+/Users/lucavacca/Documents/LucaVacca Developer/Adesso.it/AwesomePizza-API/src/main/java/com/portal/awesome_pizza/serviceImpl/OrdineServiceImpl.java
