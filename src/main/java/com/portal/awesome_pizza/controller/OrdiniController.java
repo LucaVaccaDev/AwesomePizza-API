@@ -43,7 +43,7 @@ public class OrdiniController {
         return service.getOrdineById(codOrdine);
     }
 
-    @PostMapping("/ordine")
+    @PutMapping("/ordine")
     public ResponsePojo updateOrdine(@RequestBody OrdinePojo ordinePojo) {
         return service.updateOrdine(ordinePojo);
     }
