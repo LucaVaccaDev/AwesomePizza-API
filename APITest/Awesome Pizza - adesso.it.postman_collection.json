@@ -1,0 +1,751 @@
+{
+	"info": {
+		"_postman_id": "eacb5b2c-6a6e-450a-97e2-7dd0974b691d",
+		"name": "Awesome Pizza - adesso.it",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1224777"
+	},
+	"item": [
+		{
+			"name": "Ordina",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeCliente\":\"Antonio Rossi\",\n    \"mailCliente\":\"arossi@gmail.com\",\n    \"itemsOrdinati\":\"margherità,marinara,capricciosa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ordina",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ordina"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OrdinaConSuccesso",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeCliente\":\"Antonio Rossi\",\n    \"mailCliente\":\"arossi@gmail.com\",\n    \"itemsOrdinati\":\"margherità,marinara,capricciosa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordina",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordina"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 15:39:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"L'ordine per : Antonio Rossi con l'id ordine AW_cbc è stato genetato con successo\",\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GetAllOrdini",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ordini",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ordini"
+					],
+					"query": [
+						{
+							"key": "stato",
+							"value": "In lavorazione",
+							"disabled": true
+						},
+						{
+							"key": "stato",
+							"value": "Ordine ricevuto",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "2024-10-07",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetAllOrdini - No filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordini?stato=Ordine completato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordini"
+							],
+							"query": [
+								{
+									"key": "stato",
+									"value": "In lavorazione",
+									"disabled": true
+								},
+								{
+									"key": "stato",
+									"value": "Ordine ricevuto",
+									"disabled": true
+								},
+								{
+									"key": "stato",
+									"value": "Ordine completato"
+								},
+								{
+									"key": "data",
+									"value": "2024-10-07",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 16:47:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Elenco ordini disponibili\",\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"nomeCliente\": \"Valentina Rossi\",\n            \"mailCliente\": \"rossivale@gmail.com\",\n            \"ordineTS\": \"2024-10-07T15:20:50.322+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"Ordine completato\",\n            \"codOrdine\": \"AW_c59\",\n            \"idOrdini\": 102\n        },\n        {\n            \"nomeCliente\": \"Bianco Rossi\",\n            \"mailCliente\": \"biancorossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T09:21:58.780+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"In lavorazione\",\n            \"codOrdine\": \"AW_da4\",\n            \"idOrdini\": 152\n        },\n        {\n            \"nomeCliente\": \"Bianco Rossi\",\n            \"mailCliente\": \"biancorossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T15:21:00.385+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"Ordine ricevuto\",\n            \"codOrdine\": \"AW_b11\",\n            \"idOrdini\": 202\n        },\n        {\n            \"nomeCliente\": \"Antonio Rossi\",\n            \"mailCliente\": \"arossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T15:39:16.058+00:00\",\n            \"itemsOrdinati\": \"margherità,marinara,capricciosa\",\n            \"statoOrdine\": \"Ordine ricevuto\",\n            \"codOrdine\": \"AW_cbc\",\n            \"idOrdini\": 252\n        },\n        {\n            \"nomeCliente\": \"Antonio Rossi\",\n            \"mailCliente\": \"arossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T16:44:09.002+00:00\",\n            \"itemsOrdinati\": \"margherità,marinara,capricciosa\",\n            \"statoOrdine\": \"Ordine ricevuto\",\n            \"codOrdine\": \"AW_e98\",\n            \"idOrdini\": 302\n        }\n    ]\n}"
+				},
+				{
+					"name": "GetAllOrdini- Ordini ricevuti con data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordini?stato=Ordine ricevuto&data=2024-10-07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordini"
+							],
+							"query": [
+								{
+									"key": "stato",
+									"value": "In lavorazione",
+									"disabled": true
+								},
+								{
+									"key": "stato",
+									"value": "Ordine ricevuto"
+								},
+								{
+									"key": "stato",
+									"value": "Ordine completato",
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "2024-10-07"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 16:50:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Elenco ordini disponibili\",\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"nomeCliente\": \"Bianco Rossi\",\n            \"mailCliente\": \"biancorossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T15:21:00.385+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"Ordine ricevuto\",\n            \"codOrdine\": \"AW_b11\",\n            \"idOrdini\": 202\n        },\n        {\n            \"nomeCliente\": \"Antonio Rossi\",\n            \"mailCliente\": \"arossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T15:39:16.058+00:00\",\n            \"itemsOrdinati\": \"margherità,marinara,capricciosa\",\n            \"statoOrdine\": \"Ordine ricevuto\",\n            \"codOrdine\": \"AW_cbc\",\n            \"idOrdini\": 252\n        },\n        {\n            \"nomeCliente\": \"Antonio Rossi\",\n            \"mailCliente\": \"arossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T16:44:09.002+00:00\",\n            \"itemsOrdinati\": \"margherità,marinara,capricciosa\",\n            \"statoOrdine\": \"Ordine ricevuto\",\n            \"codOrdine\": \"AW_e98\",\n            \"idOrdini\": 302\n        }\n    ]\n}"
+				},
+				{
+					"name": "GetAllOrdini - In lavorazione",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordini?stato=In lavorazione&data=2024-10-07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordini"
+							],
+							"query": [
+								{
+									"key": "stato",
+									"value": "In lavorazione"
+								},
+								{
+									"key": "stato",
+									"value": "Ordine ricevuto",
+									"disabled": true
+								},
+								{
+									"key": "stato",
+									"value": "Ordine completato",
+									"disabled": true
+								},
+								{
+									"key": "data",
+									"value": "2024-10-07"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 16:49:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Elenco ordini disponibili\",\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"nomeCliente\": \"Bianco Rossi\",\n            \"mailCliente\": \"biancorossi@gmail.com\",\n            \"ordineTS\": \"2024-10-07T09:21:58.780+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"In lavorazione\",\n            \"codOrdine\": \"AW_da4\",\n            \"idOrdini\": 152\n        }\n    ]\n}"
+				},
+				{
+					"name": "GetAllOrdini-Ordine completato",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordini?stato=Ordine completato&data=2024-10-07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordini"
+							],
+							"query": [
+								{
+									"key": "stato",
+									"value": "In lavorazione",
+									"disabled": true
+								},
+								{
+									"key": "stato",
+									"value": "Ordine ricevuto",
+									"disabled": true
+								},
+								{
+									"key": "stato",
+									"value": "Ordine completato"
+								},
+								{
+									"key": "data",
+									"value": "2024-10-07"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 16:52:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Elenco ordini disponibili\",\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"nomeCliente\": \"Valentina Rossi\",\n            \"mailCliente\": \"rossivale@gmail.com\",\n            \"ordineTS\": \"2024-10-07T15:20:50.322+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"Ordine completato\",\n            \"codOrdine\": \"AW_c59\",\n            \"idOrdini\": 102\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GetOrdineByCodOrdine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ordine/:codOrdine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ordine",
+						":codOrdine"
+					],
+					"variable": [
+						{
+							"key": "codOrdine",
+							"value": "AW_c59"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetOrdineByCodOrdine",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordine/:codOrdine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordine",
+								":codOrdine"
+							],
+							"variable": [
+								{
+									"key": "codOrdine",
+									"value": "AW_c59"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 15:29:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Ordine AW_c59\",\n    \"status\": \"OK\",\n    \"data\": {\n        \"nomeCliente\": \"Valentina Rossi\",\n        \"mailCliente\": \"rossivale@gmail.com\",\n        \"ordineTS\": \"2024-10-07T15:20:50.322+00:00\",\n        \"itemsOrdinati\": \"margherità\",\n        \"statoOrdine\": \"In Lavorazione\",\n        \"codOrdine\": \"AW_c59\",\n        \"idOrdini\": 102\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateOrdineByCodOrdine",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n            \"nomeCliente\": \"Valentina Rossi\",\n            \"mailCliente\": \"rossivale@gmail.com\",\n            \"ordineTS\": \"2024-10-07T08:23:43.028+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"In Lavorazione\",\n            \"codOrdine\": \"AW_c59\",\n            \"idOrdini\": 102\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ordine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ordine"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateOrdineByCodOrdine",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n            \"nomeCliente\": \"Valentina Rossi\",\n            \"mailCliente\": \"rossivale@gmail.com\",\n            \"ordineTS\": \"2024-10-07T08:23:43.028+00:00\",\n            \"itemsOrdinati\": \"margherità\",\n            \"statoOrdine\": \"In Lavorazione\",\n            \"codOrdine\": \"AW_c59\",\n            \"idOrdini\": 102\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordine"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 15:20:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"L'ordine per : Valentina Rossi con l'id ordine AW_c59 è stato modificato con successo\",\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteOrdineByCodOrdine",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ordine/:codOrdine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ordine",
+						":codOrdine"
+					],
+					"variable": [
+						{
+							"key": "codOrdine",
+							"value": "AW_9a4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteOrdineByCodOrdine",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ordine/:codOrdine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ordine",
+								":codOrdine"
+							],
+							"variable": [
+								{
+									"key": "codOrdine",
+									"value": "AW_a9b"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 16:47:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Ordine AW_a9b cancellato con successo!\",\n    \"status\": \"OK\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AggiornaStatoOrdine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/aggiornaStato/:codOrdine/:stato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aggiornaStato",
+						":codOrdine",
+						":stato"
+					],
+					"variable": [
+						{
+							"key": "codOrdine",
+							"value": "AW_da4"
+						},
+						{
+							"key": "stato",
+							"value": "In lavorazione"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AggiornaStatoOrdine",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/aggiornaStato/:codOrdine/:stato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"aggiornaStato",
+								":codOrdine",
+								":stato"
+							],
+							"variable": [
+								{
+									"key": "codOrdine",
+									"value": "AW_c59"
+								},
+								{
+									"key": "stato",
+									"value": "Ordine completato"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Oct 2024 16:43:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messaggio\": \"Ordine AW_c59 aggiornato con successo!\",\n    \"status\": \"OK\"\n}"
+				}
+			]
+		}
+	]
+}
