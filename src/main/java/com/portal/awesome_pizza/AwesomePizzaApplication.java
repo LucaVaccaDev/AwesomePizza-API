@@ -16,9 +16,5 @@ public class AwesomePizzaApplication {
         SpringApplication.run(AwesomePizzaApplication.class, args);
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
 
 }
