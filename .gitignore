@@ -1,0 +1,4 @@
+
+*.class
+target/awesome-pizza-0.0.1-SNAPSHOT.jar
+target/awesome-pizza-0.0.1-SNAPSHOT.jar.original
