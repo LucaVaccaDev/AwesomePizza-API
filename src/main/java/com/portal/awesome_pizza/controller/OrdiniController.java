@@ -3,7 +3,6 @@ package com.portal.awesome_pizza.controller;
 import com.portal.awesome_pizza.model.OrdinePojo;
 import com.portal.awesome_pizza.model.ResponsePojo;
 import com.portal.awesome_pizza.service.OrdineService;
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,9 +35,6 @@ public class OrdiniController {
         return service.getOrdini(stato, data);
     }
 
-    /**
-     * Con questa API il pizzaiolo può andare nel dettaglio dell'ordine e vedere quante e quali pizze fare.
-     */
     @GetMapping("/ordine/{codOrdine}")
     public ResponsePojo getOrdineById(@PathVariable("codOrdine") String codOrdine) {
         return service.getOrdineById(codOrdine);
