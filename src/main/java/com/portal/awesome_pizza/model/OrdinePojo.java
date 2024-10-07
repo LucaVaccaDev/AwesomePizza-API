@@ -1,11 +1,14 @@
 package com.portal.awesome_pizza.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
-import java.util.UUID;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrdinePojo {
     public String nomeCliente;
     public String mailCliente;

@@ -135,7 +135,7 @@ public class OrdineServiceImpl implements OrdineService {
                 ordinePojo.setOrdineTS(Timestamp.from(Instant.now()));
                 BeanUtils.copyProperties(ordinePojo, ordineEntity);
                 ordineEntity = repository.save(ordineEntity);
-                if (ordineEntity.getIdOrdini() == ordinePojo.getIdOrdini()) {
+                if (ordineEntity.getIdOrdini().equals(ordinePojo.getIdOrdini())) {
                     response = new ResponsePojo().success("L'ordine per : " + ordinePojo.getNomeCliente() + " con l'id ordine " + ordinePojo.getCodOrdine() + " è stato modificato con successo", null);
                 }
 

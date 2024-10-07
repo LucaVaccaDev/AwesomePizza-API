@@ -1,8 +1,8 @@
 package com.portal.awesome_pizza.model;
 
-import com.portal.awesome_pizza.Utility.Constants;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.portal.awesome_pizza.Utility.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +18,7 @@ public class ResponsePojo<T> {
     public T data;
 
     public ResponsePojo() {
+        //costruttore vuoto
     }
 
     public ResponsePojo error(String errorMsg, T data) {
